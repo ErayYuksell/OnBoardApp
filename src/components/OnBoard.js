@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, StatusBar, Image } from "react-native";
 
 import AppIntroSlider from "react-native-app-intro-slider";
-// import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from "expo-linear-gradient";
 import colors from "../assets/colors/colors";
 
 const data = [
@@ -48,8 +48,19 @@ const OnBoard = (props) => {
 
   const renderDoneButton = () => {
     return (
-      <View style={styles.rightTextWrapper}>
-        <Text style={styles.rightText}>Done</Text>
+      <View>
+        <LinearGradient
+          // Background Linear Gradient
+          colors={["rgba(0,0,0,0.8)", "transparent"]}
+          style={styles.background}
+        />
+        <LinearGradient
+          // Button Linear Gradient
+          colors={["#A5C8FF", "#3b5998", "#192f6a"]}
+          style={styles.doneButtonWrapper}
+        >
+          <Text style={styles.doneButtonText}>Done</Text>
+        </LinearGradient>
       </View>
     );
   };
@@ -150,6 +161,19 @@ const styles = StyleSheet.create({
   doneButtonText: {
     fontSize: 14,
     textAlign: "center",
+    color: colors.white,
+  },
+  doneButtonWrapper: {
+    flex: 1,
+    paddingLeft: 35,
+    paddingRight: 50,
+    borderRadius: 25,
+    marginRight: -40,
+  },
+  doneButtonText: {
+    fontSize: 14,
+    textAlign: "center",
+    margin: 10,
     color: colors.white,
   },
 });

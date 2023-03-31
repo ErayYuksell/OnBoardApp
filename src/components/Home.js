@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 
 const Home = () => {
   return (
     <View>
-      <Text>Welcome to do Home Screen!</Text>
+      <SafeAreaView>
+        <Text style={{ marginLeft: 20, alignSelf: "center" }}>
+          Welcome to do Home Screen!
+        </Text>
+      </SafeAreaView>
     </View>
   );
 };
